@@ -22,6 +22,9 @@ public class CalculatorController {
         }else if("subtract".equals(operation)){
             sum = num1 - num2;
             operator = "subtract";
+        } else if ("multiply".equals(operation)) {
+            sum = num1 * num2;
+            operator = "multiply";
         }
         /*else{
             return new CalcResult("unknown", );
