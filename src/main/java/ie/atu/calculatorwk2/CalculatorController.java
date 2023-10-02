@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class CalculatorController {
 
     @GetMapping("/calculate")
-    public CalcResult calculate(@RequestParam int num1, @RequestParam int num2, @RequestParam String operation){
+    public CalcResult calculate(@RequestParam double num1, @RequestParam double num2, @RequestParam String operation){
 
-        int sum = 0;
+        double sum = 0;
         String operator = "";
 
         if("add".equals(operation)){
@@ -25,14 +25,16 @@ public class CalculatorController {
         } else if ("multiply".equals(operation)) {
             sum = num1 * num2;
             operator = "multiply";
+        } else if ("divide".equals(operation)) {
+            if(num2 != 0){
+                sum = num1 / num2;
+                operator = "divide";
+            }else {
+                return new CalcResult("divide", "Cannot divide by zero.");
+            }
+        }   else{
+                return new CalcResult("unknown", 00 );
         }
-        /*else{
-            return new CalcResult("unknown", );
-        }*/
-
         return new CalcResult(operator, sum);
-
     }
-
-
 }
