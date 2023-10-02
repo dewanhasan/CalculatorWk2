@@ -2,11 +2,9 @@ package ie.atu.calculatorwk2;
 
 public class CalcResult {
     private String operation;
-    private int result;
+    private double result;
 
-    public CalcResult(String operation, int result) {
-        this.operation = operation;
-        this.result = result;
+    public CalcResult(String divide, String s) {
     }
 
     public String getOperation() {
@@ -17,11 +15,18 @@ public class CalcResult {
         this.operation = operation;
     }
 
-    public int getResult() {
+    public double getResult() {
         return result;
     }
 
-    public void setResult(int result) {
+    public void setResult(double result) {
         this.result = result;
+    }
+
+    public CalcResult(String operation, double result) {
+        this.operation = operation;
+        this.result = result;
+
+
     }
 }
