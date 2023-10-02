@@ -19,6 +19,9 @@ public class CalculatorController {
         if("add".equals(operation)){
             sum = num1 + num2;
             operator = "add";
+        }else if("subtract".equals(operation)){
+            sum = num1 - num2;
+            operator = "subtract";
         }
         /*else{
             return new CalcResult("unknown", );
