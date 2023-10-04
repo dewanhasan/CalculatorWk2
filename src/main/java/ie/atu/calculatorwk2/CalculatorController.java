@@ -1,9 +1,7 @@
 package ie.atu.calculatorwk2;
 
-//import jdk.dynalink.Operation;
+
 import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.PathVariable;
-//import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,14 +24,9 @@ public class CalculatorController {
             sum = num1 * num2;
             operator = "multiply";
         } else if ("divide".equals(operation)) {
-            if(num2 != 0){
-                sum = num1 / num2;
-                operator = "divide";
-            }else {
-                return new CalcResult("divide", "Cannot divide by zero.");
-            }
-        }   else{
-                return new CalcResult("unknown", 00 );
+
+            sum = num1 / num2;
+            operator = "divide";
         }
         return new CalcResult(operator, sum);
     }
